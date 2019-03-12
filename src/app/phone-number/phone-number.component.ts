@@ -9,7 +9,7 @@ import { PhoneNumberService } from './phone-number.service';
 
 export class PhoneNumberComponent implements OnInit {
     title = 'Phone Number Generator!';
-    phoneNumbers: string[] = [];
+    phoneNumbers;
     phoneNumbersCount: number;
     inProgress = false;
     maximumNumber: string;
@@ -23,7 +23,7 @@ export class PhoneNumberComponent implements OnInit {
     getAllPhoneNumbers() {
         this.phoneNumberService.getPhoneNumbers()
             .subscribe((data) => {
-                this.phoneNumbers = data.split(',');
+                this.phoneNumbers = data['phoneNumbers'];
                 this.phoneNumbers = this.phoneNumbers.filter((phoneNumber) => phoneNumber.length > 0);
                 this.phoneNumbersCount = this.phoneNumbers.length;
                 this.sortNumbersAsc();
@@ -56,8 +56,6 @@ export class PhoneNumberComponent implements OnInit {
         });
         return sortedPhoneNumbersByDesc;
      }
-
-
 
     sortNumbersDes() {
         this.phoneNumbers = this._sortNumberDesc(this.phoneNumbers);

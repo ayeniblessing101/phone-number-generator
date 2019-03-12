@@ -10,11 +10,11 @@ export class PhoneNumberService {
 
     getPhoneNumbers() {
         const url = 'http://localhost:8080/api/v1/phone-numbers';
-        return this.http.get(url, {responseType: 'text'});
+        return this.http.get(url);
     }
 
     createPhoneNumber() {
-        const url = 'http://localhost:8080/api/v1/phone-numbers';
+        const url = 'http://localhost:8080/api/v1/phone-number';
         return this.http.get(url, {responseType: 'text'});
     }
 }
