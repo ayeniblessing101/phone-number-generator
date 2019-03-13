@@ -1,18 +1,11 @@
-addons:
-  chrome: stable
-
 language: node_js
 node_js:
-  - "8"
-
-branches:
-  only:
-    - develop
-
-before_script:
-  - npm install -g @angular/cli
-
+  - "node"
+  - "8.11.2"
+before_install:
+  - npm install
+  - sleep 15
 script:
-  - ng build --prod --aot
-  - ng test
-  - npm run coveralls
+  - npm test
+after_script:
+  - npm run coverage
