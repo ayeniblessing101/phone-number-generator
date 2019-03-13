@@ -42,7 +42,7 @@ export class PhoneNumberComponent implements OnInit {
     _sortNumberAsc(phoneNumbers) {
         const sortedPhoneNumbersByAsc = phoneNumbers.sort();
          this.minimumNumber = sortedPhoneNumbersByAsc[0];
-         this.maximumNumber = sortedPhoneNumbersByAsc[this.phoneNumbers.length - 1];
+         this.maximumNumber = sortedPhoneNumbersByAsc[phoneNumbers.length - 1];
          return sortedPhoneNumbersByAsc;
     }
 
