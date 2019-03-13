@@ -1,10 +1,19 @@
 language: node_js
 node_js:
-  - "8"
-install:
-  - npm install
+  - "8.12.0"
+sudo: true
+
+addons:
+  chrome: stable
+
+branches:
+  only:
+    - develop
+
 before_script:
-  - sleep 15
+  - npm install -g @angular/cli
+
 script:
-  - npm test
+  - ng lint
+  - ng test
   - npm run coveralls
