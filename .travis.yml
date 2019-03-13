@@ -1,12 +1,19 @@
+sudo: required
+addons:
+  chrome: stable
+
 language: node_js
 node_js:
   - "8"
-install:
-  - npm install
+
+branches:
+  only:
+    - develop
+
 before_script:
-  - sleep 15
+  - npm install -g @angular/cli
+
 script:
-  - npm install
-  - npm run build
-  - npm run test
+  - ng build --prod --aot
+  - ng test
   - npm run coveralls
