@@ -9,12 +9,12 @@ export class PhoneNumberService {
     constructor(private http: HttpClient) { }
 
     getPhoneNumbers() {
-        const url = 'http://localhost:8080/api/v1/phone-numbers';
+        const url = 'https://blessing-api-random-number-gen.herokuapp.com/api/v1/phone-numbers';
         return this.http.get(url);
     }
 
     createPhoneNumber() {
-        const url = 'http://localhost:8080/api/v1/phone-number';
+        const url = 'https://blessing-api-random-number-gen.herokuapp.com/api/v1/phone-number';
         return this.http.get(url, {responseType: 'text'});
     }
 }
