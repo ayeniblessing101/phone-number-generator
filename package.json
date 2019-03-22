@@ -2,16 +2,15 @@
   "name": "phone-number-generator",
   "version": "0.0.0",
   "scripts": {
-    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
-    "postinstall": "ng build --aot --prod",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port $PORT --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "coverage": "nyc --reporter=html --reporter=text --reporter=lcov mocha --reporter spec --require babel-register server/tests/**/*.js --timeout 600000 --exit",
-    "coveralls": "npm run coverage -- --report lcovonly && cat coverage/lcov.info | coveralls"
+    "coveralls": "npm run coverage -- --report lcovonly && cat coverage/lcov.info | coveralls",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
